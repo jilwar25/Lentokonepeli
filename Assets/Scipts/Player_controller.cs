@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player_controller : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 50f;
     private Rigidbody2D rb;
     Vector2 moveInput;
 
@@ -23,15 +22,29 @@ public class Player_controller : MonoBehaviour
 
     public void OnUp(InputAction.CallbackContext context)
     {
-        Debug.Log("up");
-        float moveY = context.ReadValue<float>();
-        moveInput.y = moveY;
+        if (context.phase == InputActionPhase.Started)
+        {
+            Debug.Log("up");
+            float moveY = context.ReadValue<float>();
+            moveInput.y = moveY;
+        }
+        else if(context.phase == InputActionPhase.Canceled)
+        {
+            moveInput.y = 0;
+        }
     }
     public void OnDown(InputAction.CallbackContext context)
     {
-        Debug.Log("down");
-        float moveY = context.ReadValue<float>();
-        moveInput.y = -moveY;
+        if (context.phase == InputActionPhase.Started)
+        {
+            Debug.Log("down");
+            float moveY = context.ReadValue<float>();
+            moveInput.y = -moveY;
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            moveInput.y = 0;
+        }
     }
     public void OnShoot(InputAction.CallbackContext context)
     {
