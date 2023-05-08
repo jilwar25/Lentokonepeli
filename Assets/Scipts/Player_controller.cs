@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player_controller : MonoBehaviour
 {
+    public GameObject enemy;
     public float speed = 50f;
     private Rigidbody2D rb;
     Vector2 moveInput;
@@ -49,5 +50,13 @@ public class Player_controller : MonoBehaviour
     public void OnShoot(InputAction.CallbackContext context)
     {
         // Ampuu
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Time.timeScale = 0;
+        }
     }
 }

@@ -17,15 +17,15 @@ public class Deployer : MonoBehaviour
     private void spawnEnemy()
     {
         GameObject a = Instantiate(EnemyPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y ));
+        a.transform.position = new Vector2(screenBounds.x + 2, Random.Range(0, screenBounds.y));
     }
 
     IEnumerator Wave()
     {
         while (true)
-        {
-            yield return new WaitForSeconds(respawnTime); 
+        {           
+            yield return new WaitForSeconds(respawnTime);
+            spawnEnemy();
         }
-        spawnEnemy ();
     }
 }
