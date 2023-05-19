@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 150.0f;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position);
+     //   Debug.Log(transform.position);
         if (transform.position.x < -5)
         {
             Destroy(this.gameObject);
