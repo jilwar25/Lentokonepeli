@@ -41,8 +41,8 @@ public class Enemy_2 : MonoBehaviour
         {
             rb.velocity = new Vector2(-speed, 1 * speed);
         }
-        Debug.Log("pos " + transform.position);
-        Debug.Log("scbound " + screenBounds);
+       // Debug.Log("pos " + transform.position);
+       // Debug.Log("scbound " + screenBounds);
         if (transform.position.x < -5)
         {
             Destroy(this.gameObject);
