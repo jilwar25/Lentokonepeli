@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 1310088014}
   - component: {fileID: 1310088013}
   m_Layer: 5
-  m_Name: Shoot
+  m_Name: ShootTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
