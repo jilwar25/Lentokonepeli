@@ -6,10 +6,14 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player_controller : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject bulletPrefab;
+    public Transform firingPoint;
+    public float fireRate = 0.5f;
+    private float nextFireTime = 0f;
     public float speed = 50f;
     private Rigidbody2D rb;
     Vector2 moveInput;
+    
 
     private void Start()
     {
@@ -49,7 +53,11 @@ public class Player_controller : MonoBehaviour
     }
     public void OnShoot(InputAction.CallbackContext context)
     {
-        // Ampuu
+        if (context.phase == InputActionPhase.Started && Time.time >= nextFireTime)
+        {
+            Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

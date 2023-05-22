@@ -6,6 +6,8 @@ using UnityEngine;
 public class Enemy_2 : MonoBehaviour
 {
     public float speed = 150.0f;
+    public int maxHealth = 2;
+    private int currentHealth;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
     private float nextChangeTime;
@@ -13,6 +15,7 @@ public class Enemy_2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         SetNextChangeTime();
         int direction = Random.Range(-1, 2);
        // Debug.Log(direction);
@@ -53,5 +56,29 @@ public class Enemy_2 : MonoBehaviour
     {
         float randomTime = Random.Range(0.5f, 2f);
         nextChangeTime = Time.time + randomTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+            TakeDamage(1);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Coins!!
+        Destroy(gameObject);
     }
 }
