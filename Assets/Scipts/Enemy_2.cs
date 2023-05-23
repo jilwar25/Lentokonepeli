@@ -78,7 +78,7 @@ public class Enemy_2 : MonoBehaviour
 
     private void Die()
     {
-        // Coins!!
+        GetComponent<Lootbag>().InstantiateLoot(transform.position);
         Destroy(gameObject);
     }
 }

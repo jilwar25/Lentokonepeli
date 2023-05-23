@@ -32,8 +32,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Die();
             //Coins && Sounds
         }
+    }
+
+    private void Die()
+    {
+        GetComponent<Lootbag>().InstantiateLoot(transform.position);
+        Destroy(gameObject);
     }
 }

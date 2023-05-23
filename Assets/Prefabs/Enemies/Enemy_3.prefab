@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1658584618764377541}
   - component: {fileID: 6831081702448120689}
   - component: {fileID: 3484010121770194455}
+  - component: {fileID: 7575316665515982535}
   - component: {fileID: 9222083603046912330}
   - component: {fileID: 4140342083833481380}
   m_Layer: 6
@@ -100,7 +101,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   dashSpeed: 300
+  maxHealth: 2
   player: {fileID: 4483960640929161254, guid: d3904fdd67600df49809a87450a49351, type: 3}
+--- !u!114 &7575316665515982535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531117641419754139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac14a7f7fc515ac47b5cbe1fabdf18ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 7440895446944544086, guid: 91033100b017fe4478b17c3cfa8399dc, type: 3}
+  lootList: []
 --- !u!70 &9222083603046912330
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
