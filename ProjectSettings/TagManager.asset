@@ -15,7 +15,7 @@ TagManager:
   - UI
   - EnemyLayer
   - Bullets
-  - 
+  - ground
   - 
   - 
   - 
@@ -45,4 +45,13 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 794331563
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 2219521047
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 796065349
     locked: 0
