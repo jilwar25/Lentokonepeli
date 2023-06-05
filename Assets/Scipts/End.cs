@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class End : MonoBehaviour
 {
 
-    public Text coinCountText;
-    public Text enemyCountText;
+    public TextMeshProUGUI coinCountText;
+    public TextMeshProUGUI enemyCountText;
 
     public void ShowVictoryScreen(int coinCount, int enemyCount)
     {

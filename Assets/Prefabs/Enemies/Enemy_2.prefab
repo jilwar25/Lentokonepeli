@@ -161,4 +161,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droppedItemPrefab: {fileID: 7440895446944544086, guid: 91033100b017fe4478b17c3cfa8399dc, type: 3}
-  lootList: []
+  lootList:
+  - {fileID: 0}

@@ -16,7 +16,7 @@ public class Sprite_move : MonoBehaviour
     void setupTexture()
     {
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-        singleTextureWidth = sprite.texture.width / sprite.pixelsPerUnit;
+        singleTextureWidth = sprite.texture.width;
     }
 
     void Scroll()
